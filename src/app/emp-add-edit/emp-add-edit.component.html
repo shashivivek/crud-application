@@ -1,0 +1,54 @@
+<div mat-dialog-title>Employee Form</div>
+<div mat-dialog-content class="content">
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" placeholder="ex: shashi" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="ex: yadav" />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="Email" placeholder="test@gmail.com" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker">
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <mat-radio-group aria-label="Select an option">
+    <mat-label>Gender</mat-label>
+    <mat-radio-button value="1">Male</mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+    <mat-radio-button value="2">Gender</mat-radio-button>
+  </mat-radio-group>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Education</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let val of education" [value]="val">{{val}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+    <div mat-dialog-action>
+      <button mat-raised-button color="primary">Save</button>
+      <button mat-raised-button>Cancel</button>
+    </div>
+  </div>
